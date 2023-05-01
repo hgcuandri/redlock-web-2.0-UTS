@@ -19,11 +19,12 @@
     # Mendapatkan hasil dari variable sql 
     $res = $conn->query($sql);
 
+    $a = 0;
     # Validasi jika ada data di dalam database dan tablenya
     if($res->num_rows > 0){
         # Validasi nge print data jika data ada dalam tabel "users"
         while($row = $res->fetch_assoc()){
-        
+            $a = $a + 1;
             echo "ID: ". $row["ID"]. " | Nama: ". $row["Nama"]. " | Alamat: ". $row["Alamat"]. " | Jabatan: ". $row["Jabatan"]. "<br>";
         }
     }
@@ -31,6 +32,8 @@
         # Jika ngak ada data, maka akan menampilkan NULL
         echo "NULL";
     }
+
+    echo "$a ". "data";
 
     # Menutup connection dengan database
     $conn->close();

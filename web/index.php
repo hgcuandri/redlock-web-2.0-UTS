@@ -19,12 +19,12 @@
     # Mendapatkan hasil dari variable sql 
     $res = $conn->query($sql);
 
-    $hitung = 0;
+    
     # Validasi jika ada data di dalam database dan tablenya
     if($res->num_rows > 0){
         # Validasi nge print data jika data ada dalam tabel "users"
         while($row = $res->fetch_assoc()){
-            $hitung = $hitung+1;
+            
             echo "ID: ". $row["ID"]. " | Nama: ". $row["Nama"]. " | Alamat: ". $row["Alamat"]. " | Jabatan: ". $row["Jabatan"]. "<br>";
         }
     }
@@ -34,7 +34,7 @@
         
     }
 
-    echo "Total data: ". "$hitung";
+    
 
 
 

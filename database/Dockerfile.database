@@ -1,0 +1,12 @@
+# Image PHP 8.1 dan apache webserver
+FROM mysql:latest
+
+# Mengatur Environment Variable
+ENV MYSQL_ALLOW_EMPTY_PASSWORD=1
+ENV MYSQL_DATABASE=redlock
+
+
+#Copy database ke dockernya
+COPY redlock-db.sql /docker-entrypoint-initdb.d/
+
+
